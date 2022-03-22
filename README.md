@@ -1,3 +1,16 @@
+# Forked version
+
+We don't want store key in keystring. Each time it asked "Do you want to save this password in the keyring ?" is annoying. Fork this to prevent it from asking everytime ...
+
+You can use `$ docker build -t gimme-aws-creds-docker .`
+then set alias `$ alias gimme-aws-creds-docker="docker run -it --rm \
+  -v ~/.aws/credentials:/root/.aws/credentials \
+  -v ~/.okta_aws_login_config:/root/.okta_aws_login_config \
+  gimme-aws-creds-docker"`
+
+Next time, you can use `gimme-aws-creds-docker` instead of `gimme-aws-creds`
+
+
 # Gimme AWS Creds
 
 [![][license img]][license]
